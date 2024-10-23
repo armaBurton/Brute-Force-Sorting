@@ -1,0 +1,50 @@
+section {
+  width: 75%;
+  display:flex;
+  flex-direction: column;
+  color: white;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap:3em;
+  background-color: black;
+  padding: 3em;
+  margin-bottom: 5em;
+  border: 1px solid chartreuse;
+  border-radius: 1em;
+}
+
+h1{
+  padding-bottom: .75em;
+}
+
+.App {
+  background-color: #282c34;
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5em;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.array{
+  display:flex;
+  flex-direction: row;
+}
+
+.arr{
+  margin-right: 2em;
+}
+
+.showArr{
+  display: flex;
+  flex-direction: row;
+}
+
+.hideMe{
+  visibility: hidden;
+}
