@@ -1,18 +1,19 @@
 import React from 'react';
 import './App.css';
-import { generateRandoNumboArr, bubbleSort } from './utils/utils';
+import { generateRandoNumboArr, bubbleSort, selectionSort, sortTest } from './utils/utils';
 import displayArr from './views/displayArr/displayArr';
 
 function App() {
-  const randoNumboArr = [];
-  generateRandoNumboArr(randoNumboArr);
-  const bubbleSorted = [...randoNumboArr];
-
-  console.log(randoNumboArr);
+  const randoNumboArr1 = [];
+  const randoNumboArr2 = [];
+  generateRandoNumboArr(randoNumboArr1);
+  const bubbleSorted = [...randoNumboArr1];
+  generateRandoNumboArr(randoNumboArr2);
+  const selectionSorted = [...randoNumboArr2]
 
   bubbleSort(bubbleSorted);
-  console.log(bubbleSorted);
-
+  selectionSort(selectionSorted);
+  console.log("test");
 
   return (
     <div className="App">
@@ -24,7 +25,7 @@ function App() {
         <div>
           <h1>Randomly Generated Array:</h1>
           <div className='showArr'>
-            {displayArr(randoNumboArr)}
+            {displayArr(randoNumboArr1)}
           </div>
         </div>
         <div>
@@ -38,20 +39,17 @@ function App() {
         <div>
           <h1>Randomly Generated Array:</h1>
           <div className='showArr'>
-            <div className='hideMe'>
-              {generateRandoNumboArr(randoNumboArr)}
-            </div>
-            {displayArr(randoNumboArr)}
+            {displayArr(randoNumboArr2)}
           </div>
         </div>
         <div>
           <h1>Selection Sorted Array:</h1>
           <div className='showArr'>
-            {displayArr(bubbleSorted)}
+            {displayArr(selectionSorted)}
           </div>
         </div>
       </section>
-
+      {sortTest()} 
     </div>
   );
 }
