@@ -1,4 +1,4 @@
-import sortComponent from "../views/sortComponent/sortComponent";
+// import sortComponent from "../views/sortComponent/sortComponent";
 
 export const clearArr = (arr) => {
   while (arr.length > 0) {

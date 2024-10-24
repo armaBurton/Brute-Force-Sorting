@@ -61,7 +61,6 @@ export const simpleSelectionSort = (arr = []) => {
     //swap
     if (min !== i) [arr[i], arr[min]] = [arr[min], arr[i]];
   }
-  const selectionEnd = performance.now();
 
   return arr;
 };
@@ -77,8 +76,7 @@ export const sortFunction = () => {
 };
 
 export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
-  // const lengths = [10, 100, 1000, 10000, 100000];
-  const lengths = [10, 100, 1000];
+  const lengths = [10, 100, 1000, 10000, 100000];
 
   lengths.forEach((length) => {
     const bubbleArr = [];
