@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { generateRandoNumboArr, sortFunction } from "./utils/utils";
+import { generateRandoNumboArr, simpleSelectionSort, sortFunction, selectionSort } from "./utils/utils";
 import displayArr from "./views/displayArr/displayArr";
 import { recordSortingTimes } from "./utils/utils";
 import { clearArr } from "./utils/utils";
@@ -19,12 +19,17 @@ function App() {
   const selectionSorted = [...randoNumboArr2];
   const sizes = [10, 100, 1000, 10000, 100000];
 
+
+  simpleSelectionSort(selectionSorted);
+  simpleSelectionSort(bubbleSorted);
+
+
   clearArr(bubbleTimes);
   clearArr(selectionTimes);
   //     // console.log("test");
   recordSortingTimes(bubbleTimes, selectionTimes);
-  console.log("*** -39 -App.js *** bubbleTimes ==> ", bubbleTimes);
-  console.log("*** -39 -App.js *** selectionTimes ==> ", selectionTimes);
+  // console.log("*** -39 -App.js *** bubbleTimes ==> ", bubbleTimes);
+  // console.log("*** -39 -App.js *** selectionTimes ==> ", selectionTimes);
 
   const data = { bubbleTimes, selectionTimes };
 
@@ -42,6 +47,7 @@ function App() {
         <div>
           <h1>Bubble Sorted Array:</h1>
           <div className="showArr">{displayArr(bubbleSorted)}</div>
+          {console.log("BubbleSorted: ", bubbleSorted)}
         </div>
       </section>
       <section>
@@ -52,6 +58,7 @@ function App() {
         <div>
           <h1>Selection Sorted Array:</h1>
           <div className="showArr">{displayArr(selectionSorted)}</div>
+          {console.log("selectionSorted: ", selectionSorted)}
         </div>
       </section>
       <section className="sectionOverride">

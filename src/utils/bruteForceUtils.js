@@ -13,6 +13,8 @@ export const generateRandoNumboArr = (len, arr) => {
   for (let i = 0; i < len; i++) {
     arr.push(Math.ceil(Math.random() * 100));
   }
+
+  console.log(arr);
 };
 
 export const bubbleSort = (arr = [], bubbleTimes = []) => {
@@ -50,35 +52,18 @@ export const selectionSort = (arr = [], selectionTimes = []) => {
   return arr;
 };
 
-export const simpleSelectionSort = (arr = []) => {
-  for (let i = 0; i < arr.length; i++) {
-    //Assume that the first index holds
-    //the minimum element
-    let min = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[min]) min = j;
-    }
-    //swap
-    if (min !== i) [arr[i], arr[min]] = [arr[min], arr[i]];
-  }
-  const selectionEnd = performance.now();
-
-  return arr;
-};
-
-export const sortFunction = () => {
-  return (
-    <>
-      {Array.from({ length: 10 }, (_, i) => (
-        <div key={i}>{sortComponent(i)}</div>
-      ))}
-    </>
-  );
-};
+// export const sortFunction = () => {
+//   return (
+//     <>
+//       {Array.from({ length: 10 }, (_, i) => (
+//         <div key={i}>{sortComponent(i)}</div>
+//       ))}
+//     </>
+//   );
+// };
 
 export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
-  // const lengths = [10, 100, 1000, 10000, 100000];
-  const lengths = [10, 100, 1000];
+  const lengths = [10, 100, 1000, 10000, 100000];
 
   lengths.forEach((length) => {
     const bubbleArr = [];
@@ -93,3 +78,16 @@ export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
   });
 };
 
+module.exports = { generateRandoNumboArr };
+
+// Allow calling the function from the command line
+if (require.main === module) {
+  const [, , functionName, len, ...rest] = process.argv;
+
+  if (typeof module.exports[functionName] === 'function') {
+    const arr = [];
+    module.exports[functionName](parseInt(len), arr); // Pass arguments to the function
+  } else {
+    console.log(`Function ${functionName} does not exist.`);
+  }
+}
