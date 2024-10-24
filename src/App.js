@@ -6,6 +6,7 @@ import { recordSortingTimes } from "./utils/utils";
 import { clearArr } from "./utils/utils";
 import PlotlyChart from "./views/plotly/plotly";
 import KaTeX from "./views/katex/katex";
+import Part2a from "./views/part2/part2a";
 
 function App() {
   const bubbleTimes = [];
@@ -30,7 +31,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-
+      <section className="titleBlock">
+        <h1 className="part">Part 1</h1>
+      </section>
       <section>
         <div>
           <h1>Randomly Generated Array:</h1>
@@ -59,8 +62,16 @@ function App() {
       <section className="chartSection">
         <PlotlyChart data={data} labels={sizes} />
       </section>
-      <section className="chartSection">
+      <section>
         <KaTeX />
+      </section>
+      <section className="titleBlock">
+        <h1 className="part">Part 2</h1>
+      </section>
+      <section>
+        <div className="showArr">
+          <Part2a />
+        </div>
       </section>
     </div>
   );

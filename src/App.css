@@ -144,3 +144,18 @@ ul{
 InlineMath{
   display: inline;
 }
+
+.part{
+  font-size: 2em;
+}
+
+.titleBlock{
+  width: 1200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #282c34;
+  border: none;
+  padding: 0;
+  height: 20px;
+}
