@@ -1,19 +1,43 @@
 import React from 'react';
 import './App.css';
-import { generateRandoNumboArr, bubbleSort, selectionSort, sortTest } from './utils/utils';
+import { generateRandoNumboArr, sortFunction } from './utils/utils';
 import displayArr from './views/displayArr/displayArr';
+import { recordSortingTimes } from './utils/utils';
+
+// const recordSortingTimes = () => {
+//   const lengths = [10, 100, 1000, 10000, 100000];
+  const bubbleTimes = [];
+  const selectionTimes = [];
+  // const bubbleSorted = [];
+  
+//   lengths.forEach((length) => {
+//     const timerArray = [];
+
+//     generateRandoNumboArr(length, timerArray);
+//     bubbleSort(timerArray, bubbleTimes);
+//     generateRandoNumboArr(length, timerArray);
+//     selectionSort(timerArray, selectionTimes);
+
+//   })
+
+// }
+
+
 
 function App() {
   const randoNumboArr1 = [];
   const randoNumboArr2 = [];
-  generateRandoNumboArr(randoNumboArr1);
+  generateRandoNumboArr(20, randoNumboArr1);
   const bubbleSorted = [...randoNumboArr1];
-  generateRandoNumboArr(randoNumboArr2);
-  const selectionSorted = [...randoNumboArr2]
+  generateRandoNumboArr(20, randoNumboArr2);
+  const selectionSorted = [...randoNumboArr2];
 
-  bubbleSort(bubbleSorted);
-  selectionSort(selectionSorted);
-  console.log("test");
+
+  
+    // console.log("test");
+    // recordSortingTimes(bubbleTimes, selectionTimes);
+// console.log('*** -39 -App.js *** bubbleTimes ==> ', bubbleTimes)
+// console.log('*** -39 -App.js *** selectionTimes ==> ', selectionTimes)
 
   return (
     <div className="App">
@@ -49,7 +73,13 @@ function App() {
           </div>
         </div>
       </section>
-      {sortTest()} 
+      <section className='sectionOverride'>
+        <div>
+          <div className='showArr2'>
+            {sortFunction()}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
