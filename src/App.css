@@ -1,5 +1,5 @@
 section {
-  width: 75%;
+  width: 1200px;
   display:flex;
   flex-direction: column;
   color: white;
@@ -50,12 +50,6 @@ h1{
   visibility: hidden;
 }
 
-.test{
-  /* line-height: 0em;
-  margin: 0;
-  padding: 0; */
-}
-
 .lineItem{
   display: flex;
   flex-direction: row;
@@ -69,14 +63,14 @@ ul{
   line-height: 1.5em;
 }
 
- li{
+.firstList{
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
 }
 
 .listSection{
-  width: 100%;
+  width: 960px;
   background-color: #282c34;
   border: none;
   padding: 3.5em;
@@ -100,4 +94,53 @@ ul{
 
 .sectionOverride{
   padding: 3em;
+}
+
+.chartSection{
+
+  height: 550px;
+
+}
+
+.chartGraphic{
+  height: 500px;
+  width: 100%;
+}
+
+.katex{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.katexLi
+{
+  display: flex;
+  flex: row;
+}
+
+.katexOl
+{
+  display: flex;
+  flex: row;
+
+}
+
+.strong{
+  font-weight: 600;
+}
+
+.slant{
+  font-style: italic;
+}
+
+.answers{
+  word-wrap: normal;
+  line-height: 1.75em;
+}
+
+InlineMath{
+  display: inline;
 }

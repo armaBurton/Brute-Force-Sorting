@@ -16,14 +16,14 @@ const sortComponent = (i) => {
             <div className="listSection">
                 <h1 className="test">Test #{i + 1}</h1>
                 <ul>
-                    <li>Original Array:
+                    <li className="firstList">Original Array:
                         <div className='showArr2'>
                             <div className="lineItem">
                                 {displayArrShort(randomArr)}
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li className="firstList">
                         Bubble Sort:
                         <div className='showArr2'>
                             <div className="lineItem">
@@ -31,7 +31,7 @@ const sortComponent = (i) => {
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li className="firstList">
                         Selection Sort:
                         <div className='showArr2'>
                             <div className="lineItem">
@@ -39,7 +39,7 @@ const sortComponent = (i) => {
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li className="firstList">
                         JavaScript Sort:
                         <div className='showArr2'>
                             <div className="lineItem">
