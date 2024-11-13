@@ -1,0 +1,102 @@
+<style>
+    span {
+        margin-top: 5em;
+    }
+
+    h1 {
+        margin-left: 2em;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    p {
+        line-height: 1.5em;
+    }
+
+
+    li {
+        line-height: 2em;
+        margin-left: 3em;
+    }
+
+    .arrays {
+
+        line-height: 1.5em;
+        margin-left: 3em;
+    }
+</style>
+
+<h1>Enter this commands into the console, one at a time.</h1>
+
+<span>
+    <ol style="font-size:24px;">
+        <li>
+            node
+        </li>
+        <li>
+            const { generateRandoNumboArr, bubbleSort, clearArr, selectionSort, recordSortingTimes } =
+        </li>
+        <li>
+            require('./bruteForceUtils');
+        </li>
+        <ul>
+            <li style="display: flex;flex-direction: column;">
+
+                <b class="arrays">These can be added at the same time.</b>
+
+                <p class="arrays">global.arr = []</p>
+
+                <p class="arrays">global.bubbleTimer = []</p>
+
+                <p class="arrays">global.selectionTimer = []</p>
+
+                <p class="arrays">global.timer = []</p>
+
+                <p class="arrays">global.size = [10, 100, 1000, 10000, 100000]</p>
+            </li>
+        </ul>
+        <li>
+            generateRandoNumboArr(10, global.arr)
+        </li>
+        <li>
+            global.arr
+        </li>
+        <li>
+            bubbleSort(global.arr, global.timer)
+        </li>
+        <li>
+            global.arr
+        </li>
+        <li>
+            clearArr(global.arr)
+        </li>
+        <li>
+            clearArr(global.time)
+        </li>
+        <li>
+            generateRandoNumboArr(10, global.arr)
+        </li>
+        <li>
+            global.arr
+        </li>
+        <li>
+            selectionSort(global.arr, global.timer)
+        </li>
+        <li>
+            global.arr
+        </li>
+        <li>
+            clearArr(global.arr)
+        </li>
+        <li>
+            clearArr(global.time)
+        </li>
+        <li>
+            recordSortingTimes(global.bubbleTimer, global.selectionTimer)
+        </li>
+    </ol>
+</span>

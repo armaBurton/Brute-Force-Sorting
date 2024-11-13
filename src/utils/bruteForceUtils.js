@@ -1,13 +1,12 @@
 // import sortComponent from "../views/sortComponent/sortComponent";
 
-export const clearArr = (arr) => {
+const clearArr = (arr) => {
   while (arr.length > 0) {
     arr.pop();
   }
 };
 
-export const generateRandoNumboArr = (len, arr) => {
-  //always generates a fresh array
+const generateRandoNumboArr = (len, arr) => {
   if (arr.length > 0) clearArr(arr);
 
   for (let i = 0; i < len; i++) {
@@ -17,7 +16,8 @@ export const generateRandoNumboArr = (len, arr) => {
   console.log(arr);
 };
 
-export const bubbleSort = (arr = [], bubbleTimes = []) => {
+
+const bubbleSort = (arr, times) => {
   const bubbleStart = performance.now();
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
@@ -29,12 +29,10 @@ export const bubbleSort = (arr = [], bubbleTimes = []) => {
     }
   }
   const bubbleEnd = performance.now();
-  bubbleTimes.push(bubbleEnd - bubbleStart);
-
-  return arr;
+  times.push(bubbleEnd - bubbleStart);
 };
 
-export const selectionSort = (arr = [], selectionTimes = []) => {
+const selectionSort = (arr, times) => {
   const selectionStart = performance.now();
   for (let i = 0; i < arr.length; i++) {
     //Assume that the first index holds
@@ -42,17 +40,16 @@ export const selectionSort = (arr = [], selectionTimes = []) => {
     let min = i;
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[min]) min = j;
+      // }
+      //swap
+      if (min !== i) [arr[i], arr[min]] = [arr[min], arr[i]];
     }
-    //swap
-    if (min !== i) [arr[i], arr[min]] = [arr[min], arr[i]];
   }
   const selectionEnd = performance.now();
-  selectionTimes.push(selectionEnd - selectionStart);
-
-  return arr;
+  times.push(selectionEnd - selectionStart);
 };
 
-// export const sortFunction = () => {
+//  const sortFunction = () => {
 //   return (
 //     <>
 //       {Array.from({ length: 10 }, (_, i) => (
@@ -62,7 +59,7 @@ export const selectionSort = (arr = [], selectionTimes = []) => {
 //   );
 // };
 
-export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
+const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
   const lengths = [10, 100, 1000, 10000, 100000];
 
   lengths.forEach((length) => {
@@ -70,15 +67,24 @@ export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
     const selectArr = [];
 
     generateRandoNumboArr(length, bubbleArr);
-    generateRandoNumboArr(length, selectArr);
-    // console.log(timerArray);
-
     bubbleSort(bubbleArr, bubbleTimes);
+    generateRandoNumboArr(length, selectArr);
     selectionSort(selectArr, selectionTimes);
+
+    console.log("Unsorted Bubble Array: ", bubbleArr)
+    console.log(`Bubble Timer for Size ${length}: `, bubbleTimes)
+    console.log("Unsorted Select Array: ", selectArr)
+    console.log(`Selection Timer for Size ${length}: `, selectionTimes)
+
+
+    console.log("")
+    console.log("")
+
+
   });
 };
 
-module.exports = { generateRandoNumboArr };
+module.exports = { generateRandoNumboArr, bubbleSort, clearArr, selectionSort, recordSortingTimes };
 
 // Allow calling the function from the command line
 if (require.main === module) {
@@ -91,3 +97,24 @@ if (require.main === module) {
     console.log(`Function ${functionName} does not exist.`);
   }
 }
+
+
+
+
+// $ node
+//   > global.myVar = 100;
+// > global.myVar
+// 100
+//   > myVar = 200;  // Automatically becomes global in REPL
+// > global.myVar
+// 200
+// $ node
+//   > global.multiply = function(a, b) { return a * b; }
+// undefined
+//   > multiply(3, 4);`
+// 12
+// $ node
+//   > global.arr =[];
+// > const { generateRandoNumboArr } = require('./bruteForceUtils');
+// > generateRandoNumboArr(10, global.arr);
+// [42, 78, 23, 66, 99, 57, 88, 20, 45, 9]  // Example output

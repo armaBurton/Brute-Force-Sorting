@@ -47,7 +47,7 @@ function App() {
         <div>
           <h1>Bubble Sorted Array:</h1>
           <div className="showArr">{displayArr(bubbleSorted)}</div>
-          {console.log("BubbleSorted: ", bubbleSorted)}
+          {/* {console.log("BubbleSorted: ", bubbleSorted)} */}
         </div>
       </section>
       <section>
@@ -58,7 +58,7 @@ function App() {
         <div>
           <h1>Selection Sorted Array:</h1>
           <div className="showArr">{displayArr(selectionSorted)}</div>
-          {console.log("selectionSorted: ", selectionSorted)}
+          {/* {console.log("selectionSorted: ", selectionSorted)} */}
         </div>
       </section>
       <section className="sectionOverride">

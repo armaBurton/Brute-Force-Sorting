@@ -28,7 +28,8 @@ export const bubbleSort = (arr = [], bubbleTimes = []) => {
   }
   const bubbleEnd = performance.now();
   bubbleTimes.push(bubbleEnd - bubbleStart);
-
+  console.log("BubbleArr: ", arr);
+  console.log("BubbleTimes: ", bubbleTimes);
   return arr;
 };
 
@@ -46,7 +47,8 @@ export const selectionSort = (arr = [], selectionTimes = []) => {
   }
   const selectionEnd = performance.now();
   selectionTimes.push(selectionEnd - selectionStart);
-
+  console.log("selectionArr ", arr);
+  console.log("selectionTimes ", selectionTimes);
   return arr;
 };
 
@@ -64,6 +66,14 @@ export const simpleSelectionSort = (arr = []) => {
 
   return arr;
 };
+
+export const jsSort = (arr = []) => {
+  const jsSortStart = performance.now();
+  arr.sort((a, b) => a - b);
+  const jsSortEnd = performance.now();
+  const jsSortTime = jsSortEnd - jsSortStart;
+  console.log("jsSortTime: ", jsSortTime)
+}
 
 export const sortFunction = () => {
   return (
@@ -91,3 +101,11 @@ export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
   });
 };
 
+// export const compareArrays = (user = [], system = []) => {
+//   if (user === system) {
+//     true;
+//   } else {
+//     false;
+//   }
+
+// }
