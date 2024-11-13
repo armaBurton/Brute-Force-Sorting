@@ -9,7 +9,9 @@ const Part2a = () => {
                 various visual recognition tasks without specific training for each task.
             </li><br />
             <h1>Key Research Finding</h1>
-            <li>a = Ω(2^n) → "model performance scales linearly as the concept frequency in pretraining data grows exponentially"
+            <li><b>O(log(n)) Key Finding:</b> Log-linear scaling between concept frequency and zero-shot performance. Across all
+                the 16 different plots, we observe a clear log-linear relationship between pretraining concept frequency
+                and zero-shot performance.
             </li>
         </ol>
     )
