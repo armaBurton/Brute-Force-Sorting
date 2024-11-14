@@ -101,12 +101,3 @@ export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
     selectionSort(selectArr, selectionTimes);
   });
 };
-
-// export const compareArrays = (user = [], system = []) => {
-//   if (user === system) {
-//     true;
-//   } else {
-//     false;
-//   }
-
-// }
