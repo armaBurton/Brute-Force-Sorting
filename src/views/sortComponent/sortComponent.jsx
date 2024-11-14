@@ -1,4 +1,4 @@
-import { generateRandoNumboArr, bubbleSort, selectionSort, jsSort, compareArrays } from "../../utils/utils";
+import { generateRandoNumboArr, bubbleSort, selectionSort, jsSort } from "../../utils/utils";
 import displayArrShort from "../displayArr/displayArrShort";
 import '../../App.css';
 
@@ -11,7 +11,7 @@ const sortComponent = (i) => {
     const bubbleSorted = bubbleSort([...randomArr],);
     const selectionSorted = selectionSort([...randomArr]);
     // const jsSortStart = performance.now();
-    const jsSorted = jsSort([...randomArr]);
+    // const jsSorted = jsSort([...randomArr]);
     const javaScriptSort = [...randomArr].sort((a, b) => a - b);
     // const jsSortEnd = performance.now();
     // const jsSortTime = (jsSortEnd - jsSortStart);

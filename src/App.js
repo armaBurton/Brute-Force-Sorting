@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { generateRandoNumboArr, simpleSelectionSort, sortFunction, selectionSort } from "./utils/utils";
+import { generateRandoNumboArr, simpleSelectionSort, sortFunction } from "./utils/utils";
 import displayArr from "./views/displayArr/displayArr";
 import { recordSortingTimes } from "./utils/utils";
 import { clearArr } from "./utils/utils";
