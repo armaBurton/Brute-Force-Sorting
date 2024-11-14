@@ -13,6 +13,7 @@ export const generateRandoNumboArr = (len, arr) => {
   for (let i = 0; i < len; i++) {
     arr.push(Math.ceil(Math.random() * 100));
   }
+  console.log(arr);
 };
 
 export const bubbleSort = (arr = [], bubbleTimes = []) => {
