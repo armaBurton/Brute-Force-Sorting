@@ -1,12 +1,12 @@
-import sortComponent from "../views/sortComponent/sortComponent";
+// import sortComponent from "../views/sortComponent/sortComponent";
 
-export const clearArr = (arr) => {
+const clearArr = (arr) => {
   while (arr.length > 0) {
     arr.pop();
   }
 };
 
-export const generateRandoNumboArr = (len, arr) => {
+ const generateRandoNumboArr = (len, arr = []) => {
   //always generates a fresh array
   if (arr.length > 0) clearArr(arr);
 
@@ -16,7 +16,7 @@ export const generateRandoNumboArr = (len, arr) => {
   console.log(arr);
 };
 
-export const bubbleSort = (arr = [], bubbleTimes = []) => {
+ const bubbleSort = (arr = [], bubbleTimes = []) => {
   const bubbleStart = performance.now();
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
@@ -33,7 +33,7 @@ export const bubbleSort = (arr = [], bubbleTimes = []) => {
   return arr;
 };
 
-export const selectionSort = (arr = [], selectionTimes = []) => {
+ const selectionSort = (arr = [], selectionTimes = []) => {
   const selectionStart = performance.now();
   for (let i = 0; i < arr.length; i++) {
     //Assume that the first index holds
@@ -51,17 +51,17 @@ export const selectionSort = (arr = [], selectionTimes = []) => {
   return arr;
 };
 
-export const sortFunction = () => {
-  return (
-    <>
-      {Array.from({ length: 10 }, (_, i) => (
-        <div key={i}>{sortComponent(i)}</div>
-      ))}
-    </>
-  );
-};
+//  const sortFunction = () => {
+//   return (
+//     <>
+//       {Array.from({ length: 10 }, (_, i) => (
+//         <div key={i}>{sortComponent(i)}</div>
+//       ))}
+//     </>
+//   );
+// };
 
-export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
+ const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
   const lengths = [10, 100, 1000, 10000, 100000];
 
   lengths.forEach((length) => {
@@ -77,3 +77,15 @@ export const recordSortingTimes = (bubbleTimes = [], selectionTimes = []) => {
   });
 };
 
+module.exports = { generateRandoNumboArr };
+
+if (require.main === module) {
+  const [,, functionName, arg] = process.argv;
+  
+  // Call the specified function
+  if (typeof module.exports[functionName] === 'function') {
+    module.exports[functionName](arg);
+  } else {
+    console.log(`Function ${functionName} does not exist.`);
+  }
+}
