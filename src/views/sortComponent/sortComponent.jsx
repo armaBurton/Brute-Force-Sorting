@@ -1,4 +1,4 @@
-import { generateRandoNumboArr, bubbleSort, selectionSort, jsSort } from "../../utils/utils";
+import { generateRandoNumboArr, bubbleSort, selectionSort } from "../../utils/utils";
 import displayArrShort from "../displayArr/displayArrShort";
 import '../../App.css';
 
